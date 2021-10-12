@@ -1,5 +1,7 @@
 # daily-react-native-expo-demo
 
+![Demo](./demo.gif)
+
 ## Introduction
 
 Expo is a set of tools build on top of React Native to make it easier to build React Native apps. It makes project setup and collaboration and beta testing much easier. This demo intends how to build an app using React Native Expo that wraps the daily prebuilt ui in a React Native WebView. The main logic of the app can be found in the App.tsx file. In order to wrap the daily prebuilt ui we use the following code
