@@ -2,9 +2,33 @@
 
 ## Introduction
 
-Expo is a set of tools build on top of React Native to make it easier to build React Native apps. It makes project setup and collaboration and beta testing much easier. This demo intends how to build an app using React Native Expo that wraps the daily prebuilt ui in a React Native WebView. 
+Expo is a set of tools build on top of React Native to make it easier to build React Native apps. It makes project setup and collaboration and beta testing much easier. This demo intends how to build an app using React Native Expo that wraps the daily prebuilt ui in a React Native WebView. The main logic of the app can be found in the App.tsx file. In order to wrap the daily prebuilt ui we use the following code
 
-## How to run on Mac
+```typescript
+function DailyCallScreen({ navigation }: {navigation: any}) {
+  return (
+     <View style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+      }}>
+          <WebView
+          source={{ uri: 'https://ios.daily.co/team-call' }}
+          useWebKit={true}
+          originWhitelist={['*']}
+          allowsInlineMediaPlayback={true}
+          style={{
+              height: 600,
+              width: 400,
+          }}/>
+      </View>
+  );
+}
+
+```
+
+## How to run the iOS Simulator demo on Mac
 
 Step 1. **Install Xcode** from the Mac [App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) 
 
@@ -32,10 +56,16 @@ Step 5,. Install NPM packages. On your terminal run
 cd react-native-expo-demo ; npm install
 ```
 
-Step 6. Start the expo server. On your terminal run 
+Step 5. Pre open the iOS simulator (Optional)
+
+```
+open -a Simulator.app
+```
+
+Step 6. Start the iOS demo. On your terminal run 
 
 ```bash
-expo start
+expo start -ios
 ```
 
 ## References
